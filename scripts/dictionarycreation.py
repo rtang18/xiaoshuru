@@ -51,4 +51,4 @@ def character_dict(df):
     return chars
 
 # Create the character dictionary!
-d = character_dict(characters)s
+d = character_dict(characters)
