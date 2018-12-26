@@ -4,12 +4,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 # To get rid of tone marks
-import unidecode
-import copy
+# import unidecode
 
 # Read in data
-syllables = pd.read_csv("C:/Users/rebek/Anaconda3/envs/xiaoshuru/data/syllable frequencies.csv")
-characters = pd.read_csv("C:/Users/rebek/Anaconda3/envs/xiaoshuru/data/character ranking reduced.csv", encoding = "utf-8").dropna()
+syllables = pd.read_csv("../data/syllable frequencies.csv")
+characters = pd.read_csv("../data/character ranking toneless.csv", encoding = "utf-8").dropna()
 
 # Function to create simple dictionary from dataframe
 def simple_dict(df):
@@ -27,11 +26,11 @@ def simple_dict(df):
 syll_dict = simple_dict(syllables)
 
 # Use unidecode to get rid of tone marks, add a new column without tone marks
-toneless = np.array([])
-for p in characters["pinyin"]:              
-    toneless = np.append(toneless, unidecode.unidecode(p))
-characters["toneless"] = toneless
-characters.head()
+# toneless = np.array([])
+# for p in characters["pinyin"]:              
+#     toneless = np.append(toneless, unidecode.unidecode(p))
+# characters["toneless"] = toneless
+# characters.head()
 
 # Function to create character dictionary from dataframe
 def character_dict(df):
@@ -52,4 +51,4 @@ def character_dict(df):
     return chars
 
 # Create the character dictionary!
-d = character_dict(characters)
+d = character_dict(characters)s
