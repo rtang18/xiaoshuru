@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 # Read in data
 syllables = pd.read_csv("../data/syllable frequencies.csv")
-characters = pd.read_csv("../data/character ranking toneless.csv", encoding = "utf-8").dropna()
+characters = pd.read_csv("../data/character ranking toneless.csv")
 
 # Function to create simple dictionary from dataframe
 def simple_dict(df):
@@ -51,4 +51,4 @@ def character_dict(df):
     return chars
 
 # Create the character dictionary!
-d = character_dict(characters)
+hanzi = character_dict(characters)
